@@ -154,6 +154,20 @@ class Content extends AbstractEndpoint
     }
 
     /**
+     * Получение списка брендов для предмета.
+     *
+     * @param int $subjectId ID предмета (subjectID)
+     *
+     * @return object
+     */
+    public function getBrands(int $subjectId): object
+    {
+        return $this->getRequest('/api/content/v1/brands', [
+            'subjectId' => $subjectId,
+        ]);
+    }
+
+    /**
      * Редактирование 1 КТ
      *
      * Редактирование КТ происходит асинхронно, после отправки запрос становится в очередь на обработку.
